@@ -1,0 +1,33 @@
+{% extends 'store/layouts/main.html' %}
+
+
+{% block content %}
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-12">
+            <h1> Collections </h1>
+            <hr>
+            <div class = "row">
+                {% for item in category %}
+                    <div class = "col-md-3">
+                            <div class = "card animate__animated animate__fadeInUp" style="margin-bottom:20px; width: 18rem">
+                                <div class = "card shadown product_data ">
+                                    <a href="{% url 'collectionsview' item.slug %}"
+                                    <div class = "card-body">
+
+                                        <div class = "category-image" style="text-align: center">
+                                            <img src ="{{item.image.url}}" alt = "Category image"/>
+                                        </div>
+                                        <h4 class="text-center">{{item.name}}</h4>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</dic>
+{% endblock content %}
+
+{% comment %}  animate__animated animate__fadeInUp {% endcomment %}
